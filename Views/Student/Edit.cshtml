@@ -1,0 +1,44 @@
+﻿@model test.Models.Student
+
+<form method="post" asp-action="Edit">
+    <input asp-for="id" hidden />
+    <div class="form-group">
+        <label asp-for="FullName">Full Name</label>
+        <input asp-for="FullName" class="form-control" placeholder="Enter your FullName" /></input>
+        <label asp-for="FullName">Full Name</label>
+    </div>
+    <div class="form-group">
+        <label asp-for="RollNo">Rollno</label>
+        <input asp-for="RollNo" class="form-control" placeholder="Enter your Rollno" /></input>
+        <label asp-for="RollNo">Full Name</label>
+    </div>
+    <div class="form-group">
+        <label asp-for="Class">Class</label>
+        <input asp-for="Class" class="form-control" placeholder="Enter your Class" /></input>
+        <label asp-for="Class">Class</label>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email">Email</label>
+        <input asp-for="Email" class="form-control" placeholder="Enter your Email" /></input>
+        <label asp-for="Email">Email</label>
+    </div>
+    <div class="form-group">
+        <label asp-for="PhoneNumber">Phone Number</label>
+        <input asp-for="PhoneNumber" class="form-control" placeholder="Enter your phonenumber" /></input>
+        <label asp-for="PhoneNumber">Phone Number</label>
+    </div>
+    <div class="row">
+        <div class="col-6">
+
+            <a class="btn mt-2 btn-secondary" asp-action="Index">Back to List</a>
+
+        </div>
+
+        <div class="col-6">
+            <button class="btn mt-2 btn-primary  float-end" type="submit">Update</button>
+        </div>
+
+    </div>
+
+</form>
+

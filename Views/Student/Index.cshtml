@@ -1,0 +1,57 @@
+﻿@model IEnumerable<test.Models.Student>
+<div class="row">
+    <div class="col-12">
+        <a class="btn btn-primary float-end" asp-action="Add">Add New</a>
+    </div>
+
+</div>
+
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>
+                FullName
+            </th>
+            <th>
+                RollNo
+            </th>
+            <th>
+                Class
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                PhoneNumber
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var items in Model)
+        {
+            <tr>
+                <td>
+                    @items.FullName
+                </td>
+                <td>
+                    @items.RollNo
+                </td>
+                <td>
+                    @items.Class
+                </td>
+                <td>
+                    @items.Email
+                </td>
+                <td>
+                    @items.PhoneNumber
+                </td>
+                <td>
+                    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@items.id">Edit</a>
+                    <a class="btn btn-secondary" asp-action="Detail" asp-route-id="@items.id">Detail</a>
+                    <a class="btn btn-danger" asp-action="Remove" asp-route-id="@items.id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
