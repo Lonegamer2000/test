@@ -11,7 +11,7 @@ using test.Data;
 namespace test.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240421130045_initial")]
+    [Migration("20240424094928_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -26,24 +26,29 @@ namespace test.Migrations
 
             modelBuilder.Entity("test.Models.Student", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("phone")
+                    b.Property<int>("Class")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FullName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("RollNo")
+                        .HasColumnType("int");
+
+                    b.HasKey("id");
 
                     b.ToTable("Students");
                 });

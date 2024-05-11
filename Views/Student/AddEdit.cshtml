@@ -1,6 +1,6 @@
 ﻿@model test.Models.Student
 
-<form method="post" asp-action="Add">
+<form method="post" asp-action="AddEdit">
     <input asp-for="id" hidden />
     <div class="form-group">
         <label asp-for="FullName">Full Name</label>
@@ -35,11 +35,19 @@
         </div>
 
         <div class="col-6">
-            <button class="btn mt-2 btn-primary  float-end" type="submit">Create</button>
+            @if (Model.id == 0)
+            {
+                <button class="btn mt-2 btn-primary  float-end" type="submit">Create</button>
 
+            }
+            else
+            {
+                <button class="btn mt-2 btn-primary  float-end" type="submit">Update</button>
+            }
         </div>
 
     </div>
 
 </form>
+
 

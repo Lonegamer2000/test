@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<test.Models.Student>
 <div class="row">
     <div class="col-12">
-        <a class="btn btn-primary float-end" asp-action="Add">Add New</a>
+        <a class="btn btn-primary float-end" asp-action="AddEdit">Add New</a>
     </div>
 
 </div>
 
 
-<table border="1">
+<table border="1" class="col-12">
     <thead>
         <tr>
             <th>
@@ -47,7 +47,7 @@
                     @items.PhoneNumber
                 </td>
                 <td>
-                    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@items.id">Edit</a>
+                    <a class="btn btn-primary" asp-action="AddEdit" asp-route-id="@items.id">Edit</a>
                     <a class="btn btn-secondary" asp-action="Detail" asp-route-id="@items.id">Detail</a>
                     <a class="btn btn-danger" asp-action="Remove" asp-route-id="@items.id">Delete</a>
                 </td>
